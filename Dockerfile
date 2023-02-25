@@ -12,5 +12,5 @@ RUN cp ./ffmpeg-git-*-arm64-static/ffmpeg /usr/local/bin/
 #fswebcam
 WORKDIR /fswebcam
 RUN apt install fswebcam -y
-CMD while : ; do DATE=$(date +"%Y-%m-%d_%H%M"); fswebcam -r 1920x1080 -d /dev/video0 --no-banner /mnt/share/webcam/$DATE.jpg; sleep 1m; done
+CMD while : ; do DATE=$(date +"%Y-%m-%d_%H%M"); fswebcam -r 1920x1080 -d /dev/video0 --no-banner /webcam/$DATE.jpg; sleep 1m; done
 LABEL org.opencontainers.image.source=https://github.com/walnuts1018/webcam-docker-test
